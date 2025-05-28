@@ -11,7 +11,7 @@ from PIL import Image
 # Error message for invalid key.
 ker_error_msg = """Please open the app from
 <a target='_blank'
-  href='https://console.cloud.google.com/vertex-ai/studio/saved-prompts/locations/global/1252693938490310656?project=qwiklabs-gcp-04-7bc02cd5b77b&deploy=true'>
+  href='https://console.cloud.google.com/vertex-ai/studio/saved-prompts/locations/global/1252693938490310656?project=<projectid>b&deploy=true'>
   Vertex AI Studio
 </a>, not Cloud Run.<br/><br/>
 Or, obtain the key from the "Manage App" dialog within Vertex AI Studio and
