@@ -1,0 +1,82 @@
+{
+  "title": "Insurance Claim Data Extraction",
+  "description": "",
+  "note": "",
+  "parameters": {
+    "temperature": 0.1,
+    "tokenLimits": 1024,
+    "topP": 1,
+    "seed": 0,
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "UNSPECIFIED"
+          }
+        ]
+      }
+    },
+    "responseModalities": [
+      "TEXT"
+    ],
+    "voiceName": "zephyr",
+    "voiceLanguageCode": "en-US",
+    "safetyCatFilters": [
+      {
+        "category": "HATE_SPEECH",
+        "threshold": "OFF"
+      },
+      {
+        "category": "DANGEROUS_CONTENT",
+        "threshold": "OFF"
+      },
+      {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "threshold": "OFF"
+      },
+      {
+        "category": "HARASSMENT_CONTENT",
+        "threshold": "OFF"
+      }
+    ]
+  },
+  "systemInstruction": {
+    "parts": [
+      {
+        "text": "You are an AI assistant specializing in parsing and extracting specific data points from unstructured insurance claim notifications.\nYour goal is to identify and list key information accurately.\nIf a piece of information is not found, clearly state \"Not found\".\nOutput the extracted information in a key: value format, with each key on a new line.\n\n"
+      }
+    ]
+  },
+  "type": "chat",
+  "examples": [],
+  "messages": [
+    {
+      "author": "user",
+      "content": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Claim Notification Received:\n\"Hi team, just got a call from Mrs. Eleanor Vance, policy #POL458892. She reported a kitchen fire that occurred on May 12th, 2025, around 3 PM. The main damage seems to be to the oven and surrounding cabinets. She mentioned smoke damage in the kitchen and dining area too. She thinks the total damage might be around $7,500. Her contact is 555-0123. No injuries reported, thankfully.\"\n\nExtract the following:\n- Policy Number\n- Claimant Name\n- Date of Loss\n- Time of Loss\n- Type of Loss\n- Brief Description of Damage\n- Estimated Loss Amount\n- Injuries Reported\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "**Processing the Extraction**\n\nI'm meticulously parsing the text, pinpointing each requested field. The focus is sharp: locate the \"policy #\" followed by its value. I am also beginning the search for the claimant's name within the text. I am actively working to make sure the information will be located or stated as \"Not Found\"\n\n\n**Refining Field Identification**\n\nI'm now focusing on the other data points. I'm constructing logic to identify the \"Date of Loss\" and \"Time of Loss.\" I'm anticipating potential date and time formats to make sure I capture all variations. I'm developing patterns for recognizing \"Type of Loss\" and summarizing damage.\n\n\n",
+            "thought": true
+          },
+          {
+            "text": "Policy Number: POL458892\nClaimant Name: Mrs. Eleanor Vance\nDate of Loss: May 12th, 2025\nTime of Loss: 3 PM\nType of Loss: Kitchen fire\nBrief Description of Damage: Oven and surrounding cabinets damaged, smoke damage in kitchen and dining area.\nEstimated Loss Amount: $7,500\nInjuries Reported: No injuries reported"
+          }
+        ]
+      }
+    }
+  ],
+  "model": "google/gemini-2.5-flash-preview-05-20"
+}
