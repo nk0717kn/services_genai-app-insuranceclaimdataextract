@@ -59,21 +59,21 @@ next_steps_html = """
 <ul style="list-style-position: outside; margin-left: 1em;">
   <li>Go to Cloud Run
     <a target='_blank'
-       href='https://console.cloud.google.com/run/detail/us-central1/genai-app-insuranceclaimdataextract-1-17483959794/source?project=qwiklabs-gcp-04-7bc02cd5b77b'
+       href='https://console.cloud.google.com/run/detail/us-central1/genai-app-insuranceclaimdataextract-1-17483959794/source?project=<projectid>'
     >
       source code editor
     </a> to customize application code.
   </li>
   <li>Go to your
     <a target='_blank'
-       href='https://console.cloud.google.com/vertex-ai/studio/saved-prompts/locations/global/1252693938490310656?project=qwiklabs-gcp-04-7bc02cd5b77b'
+       href='https://console.cloud.google.com/vertex-ai/studio/saved-prompts/locations/global/1252693938490310656?project=<projectid>'
     >
         Vertex AI Studio prompt
     </a> to update and redeploy it.
   </li>
   <li>Go to Cloud Run
     <a target='_blank'
-       href='https://console.cloud.google.com/run/detail/us-central1/genai-app-insuranceclaimdataextract-1-17483959794/security?project=qwiklabs-gcp-04-7bc02cd5b77b'
+       href='https://console.cloud.google.com/run/detail/us-central1/genai-app-insuranceclaimdataextract-1-17483959794/security?project<projectid>'
     >
       Security settings
     </a> to turn off unauthenticated access when it's not needed.
